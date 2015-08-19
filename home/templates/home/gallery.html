@@ -1,0 +1,14 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'styles/gallery.css' %}" />
+
+
+{% if allDrawings %}
+    <ul>
+    {% for drawing in allDrawings %}
+        <li><a href="/home/{{ drawing.name }}/">{{ drawing.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+<p> Upload drawings by visiting the admin page at siteURL/admin.</p>
+{% endif %}
